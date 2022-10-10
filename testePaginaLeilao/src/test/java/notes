@@ -1,0 +1,128 @@
+=======================================================================================================================================================================
+								INFORMAÇÕES DE SETUP
+=======================================================================================================================================================================
+
+
+Maven
+-------
+Link no youtube para configurar arquivo Maven: https://www.youtube.com/watch?v=aNlD-Sp-WSY
+
+Workspace
+---------
+Selenium - Primeiro Curso
+
+Dracula
+-------- 
+
+- In Eclipse, to open the desired theme selection window go to Window > Preferences > DevStyle > Color Theme.
+- In Extras section, click import and select dracula-theme.xml from the downloaded repository (está salvo nesta pasta: C:\Caelum\Java\eclipse\eclipse-master)
+- Select Dracula Theme from the Editor theme dropdown.
+- Select Dark Custom from the Workbench Theme dropdown.
+- Check Theme background in Extras section.
+- Enter the HSL values of HSL(231, 15, 18) (equivilent of #282a36 - background).
+- Restart Eclipse.
+
+Iniciando a página de leilões
+----------------------------
+	-> clicar com o botão direito no arquivo LeilaoApplication.java:
+		-> Run as
+		-> Java Application
+
+Caso não rode o localhost: 8080 
+--------------------------------
+	-> finalizar no console e depois clicar no X.
+	-> clicar novamente com o botão direito no arquivo LeilaoApplication.java:
+		-> Run as
+		-> Java Application
+
+=======================================================================================================================================================================
+								ANOTAÇÕES GERAIS
+=======================================================================================================================================================================
+
+
+Testes de Aceitação ou E2E ou UI - são os testes que eu faço, que simula o usuário
+
+Importar sempre com org.junit.jupiter.api.Test;
+
+Como importar o Selenium na aplicação usando o Maven
+-----------------------------------------------------
+	- Para conseguir o groupId e o artifactId:
+		- vá em selenium.dev
+		- no menu superior, clicar em downloads
+		- vá até o sessão com o título "Maven Information" e clique em 'MVNRepository'. Irá para outra página contendo vários repositórios.
+		- Clicar em "Selenium Chrome Drive"
+		- Clicar na última versão
+		- Copiar o código que será algo como:
+	
+			<dependency>
+    				<groupId>org.seleniumhq.selenium</groupId>
+    				<artifactId>selenium-chrome-driver</artifactId>
+    				<version>4.1.3</version>
+			</dependency>		
+		
+	- De volta ao projeto no Eclipse, Clicar no arquivo pom.xml
+
+	- Ir até a última dependência, normalmente a última dependência é: 
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+	- Abaixo, acrescentar o código copiado
+
+Observações: 
+	Links diretos:
+
+		- para a versão usada: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver/4.1.3
+		- para escolher a última versão: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
+
+	Copiei o link para trabalhar apenas no Chrome. Caso queria trabalhar com outros navegadores, escolher o link "Selenium Java" que pode ser visto no link https://mvnrepository.com/artifact/org.seleniumhq.selenium
+
+	No projeto específico, como foi construído com Spring Boot, tirei a linha <version>4.1.3</version>, pois o Spring Boot já sabe de qual versão se trata
+
+	Mais informações no vídeo: https://cursos.alura.com.br/course/selenium-testes-automatizados-aceitacao-java/task/85549
+
+Driver
+------
+	É o arquivo que faz a ponte com o navegador
+	
+	Para baixar o driver:
+		- chromedriver.chromium.org
+		- clicar na versão igual ao do chrome (tentar manter o chrome sempre atualizado)
+		- baixar o arquivo referente ao sistema operacional (deszipar)
+		- dentro do projeto, criar pasta driver
+		- colar o arquivo dentro da pasta
+	
+		- acessar o site: https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
+		- copiar a linha: System.setProperty("webdriver.chrome.driver","/path/to/chromedriver");
+		- colar a linha na classe de teste
+		- substituir /path/to pelo caminho onde foi colado o driver
+		
+Sobre a questão da BasePage:
+	Aos 8': https://cursos.alura.com.br/course/selenium-testes-automatizados-aceitacao-java/task/85555
+		
+		
+		
+BACKLOG
+-------
+Lembrar de colocar esperas na troca de páginas
+Criar Enums
+Construtor usando super()
+Ver sobre o fechar que está com uma task no LoginPages()
+Criar relatórios com print de telas
+Rodar a regressiva
+Mocks
+Ver sobre "throws InterruptedException" na clase LoginsTasks
+
+https://github.com/felipeqa/selenium/tree/master/src/test/java/pages
+https://github.com/felipeqa/selenium/blob/master/src/test/java/suporte/SetUpWebdriver.java
+https://github.com/felipeqa/selenium/blob/master/src/test/java/pages/BasePage.java
+https://github.com/felipeqa/selenium/blob/master/src/test/java/pages/LoginPage.java
+https://github.com/felipeqa/selenium/blob/master/src/test/java/tests/InformacoesUsuarioTest.java
+
+
+
+PRÓXIMOS PASSOS
+---------------
+Verificar pq voltou a abrir mais de um navagador
+
