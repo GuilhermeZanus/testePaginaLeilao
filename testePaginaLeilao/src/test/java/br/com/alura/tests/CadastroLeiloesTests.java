@@ -54,4 +54,21 @@ public class CadastroLeiloesTests extends BaseTests {
 		cadastroLeiloes.validarSalvamento(nomeDoLeilao);
 	}
 	
+	@Test
+	@DisplayName("Valida valor inicial")
+	public void cadastroValorInicial() throws InterruptedException {	
+		String hoje = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		String nomeDoLeilao = "Leilão do dia " + hoje + "333300000000";
+		String valorInicial = "2000000.00";
+		
+		cadastroLeiloes.infomarNome(nomeDoLeilao);
+		cadastroLeiloes.informarValorInicial(valorInicial);
+		cadastroLeiloes.informarDataAbertura(hoje);
+		cadastroLeiloes.validarUsuario("fulano");
+		
+		cadastroLeiloes.salvarLeilao();
+		
+		cadastroLeiloes.validaValorInicial(nomeDoLeilao, valorInicial);
+	}
+	
 }

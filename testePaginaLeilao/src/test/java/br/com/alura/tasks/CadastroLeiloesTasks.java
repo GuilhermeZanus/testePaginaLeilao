@@ -47,6 +47,12 @@ public class CadastroLeiloesTasks extends BaseTasks {
 	public void validarSalvamento(String nome) {
 		int tamanhoLista = leiloes.linhasPorNome(nome).size();
 		Assertions.assertTrue(tamanhoLista>=1, "Leilão não foi salvo");		
+	}
+
+	public void validaValorInicial(String nomeProduto, String valorInicial) {
+		
+		String atributo = leiloes.valorInicialDoLeilao(nomeProduto).getText();
+		Assertions.assertEquals(valorInicial, atributo, "Valor Salvo diferente do esperado. Valor salvo: " +atributo);
 	}		
 
 }

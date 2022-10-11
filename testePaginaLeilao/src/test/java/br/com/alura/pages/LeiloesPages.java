@@ -2,7 +2,6 @@ package br.com.alura.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -68,13 +67,19 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement colunas(String nomeProduto, int indiceLeilaoSalvo, String indiceColuna) {
 		
-		return linhasPorNome(nomeProduto).get(indiceLeilaoSalvo).findElement(By.xpath("//td["+indiceColuna+"]"));
+		WebElement linha = linhasPorNome(nomeProduto).get(indiceLeilaoSalvo);
+	
+		List<WebElement> colunas = linha.findElements(By.cssSelector("td"));
+		
+		WebElement coluna = colunas.get(2);
+	
+		return coluna;
 	}
 	
 	
 	public WebElement dataDeAberturaDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "1");
+		return colunas(nomeProduto, indiceLeilaoSalvo, "2");
 	}
 	
 	
@@ -86,7 +91,7 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement valorInicialDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "2");
+		return colunas(nomeProduto, indiceLeilaoSalvo, "3");
 	}
 	
 	public WebElement valorInicialDoLeilao(String nomeProduto) {
@@ -96,23 +101,23 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement usuarioDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "3");
+		return colunas(nomeProduto, indiceLeilaoSalvo, "4");
 	}
 	
 	
 	public WebElement usuarioDoLeilao(String nomeProduto) {
 		
-		return colunas(nomeProduto, 0, "3");
+		return usuarioDoLeilao(nomeProduto, 0);
 	}
 	
 	public WebElement botaoEditarLeilao(String nomeProduto,  int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "4");
+		return colunas(nomeProduto, indiceLeilaoSalvo, "5");
 	}
 	
 	public WebElement botaoEditarLeilao(String nomeProduto) {
 		
-		return colunas(nomeProduto, 0, "4");
+		return botaoEditarLeilao(nomeProduto, 0);
 	}
 	
 	
