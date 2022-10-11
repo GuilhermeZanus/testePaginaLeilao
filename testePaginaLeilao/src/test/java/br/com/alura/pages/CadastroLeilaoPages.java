@@ -14,7 +14,7 @@ public class CadastroLeilaoPages extends BasePages{
 	
 	public void fechar() {
 		driver.quit();	
-		System.out.println("teste de integração ceclipse - github");
+		
 	}
 	
 	public WebElement divContainer() {
