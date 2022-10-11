@@ -12,16 +12,10 @@ import br.com.alura.pages.base.BasePages;
 
 public class LeiloesPages extends BasePages {
 
-	/*
-	private WebDriver driver;
-	
-	public LeiloesPages(WebDriver driver) {
-		this.driver = driver;
-	}
-*/
 
 	public LeiloesPages(WebDriver driver) {
 		super(driver);
+
 	}
 
 
@@ -52,29 +46,12 @@ public class LeiloesPages extends BasePages {
 		return tabelaLeiloesCadastrados().findElements(By.xpath("//tr"));
 	}
 	
+	
 	public WebElement linhaLeiloesCadastrados(String indiceLinha) {
 		
 		return tabelaLeiloesCadastrados().findElement(By.xpath("//tr["+indiceLinha+"]"));
 	}
 	
-	public List<LinhaLeilaoPages> buscaLinhaPorValor(String nomeProduto){
-		
-		
-		
-		List<LinhaLeilaoPages> linhas = linhasLeiloesCadastrados()
-				.stream()
-				.filter(linhasLeiloesCadastrados -> linhasLeiloesCadastrados.findElements(By.cssSelector("td"))
-						.stream()
-						.anyMatch(td -> td.getText().equals(nomeProduto)))
-				.map(el -> new LinhaLeilaoPages(driver, el))
-				.collect(Collectors.toList());
-		
-		for (int i =0; i<linhas.size(); i++) {
-			System.out.println(linhas.get(i).colunas().get(0).getText());			
-		}		
-			return linhas;	
-		
-	}
 	
 	public List<WebElement> linhasPorNome(String nomeProduto){
 		List<WebElement> lista = linhasLeiloesCadastrados();
@@ -86,11 +63,11 @@ public class LeiloesPages extends BasePages {
 			}
 		}
 		
-		return lista2;		
-		
+		return lista2;				
 	}
 	
 	
+	 
 	
 	
 	

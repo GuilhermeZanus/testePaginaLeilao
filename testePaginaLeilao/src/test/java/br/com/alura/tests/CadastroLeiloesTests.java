@@ -42,14 +42,16 @@ public class CadastroLeiloesTests extends BaseTests {
 	@DisplayName("Cadastra novo leilão")
 	public void cadastroNovoLeilao() throws InterruptedException {	
 		String hoje = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		cadastroLeiloes.infomarNome("Leilão do dia " + hoje);
+		String nomeDoLeilao = "Leilão do dia " + hoje;
+		
+		cadastroLeiloes.infomarNome(nomeDoLeilao);
 		cadastroLeiloes.informarValorInicial("500.00");
 		cadastroLeiloes.informarDataAbertura(hoje);
 		cadastroLeiloes.validarUsuario("fulano");
 		
 		cadastroLeiloes.salvarLeilao();
 		
-		cadastroLeiloes.validarSalvamento("Leilão do dia  " + hoje);
+		cadastroLeiloes.validarSalvamento(nomeDoLeilao);
 	}
-
+	
 }

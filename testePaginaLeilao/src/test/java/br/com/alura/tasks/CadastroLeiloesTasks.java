@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 
 import br.com.alura.pages.CadastroLeilaoPages;
 import br.com.alura.pages.LeiloesPages;
-import br.com.alura.pages.LinhaLeilaoPages;
 import br.com.alura.tasks.base.BaseTasks;
 
 public class CadastroLeiloesTasks extends BaseTasks {
@@ -46,16 +45,9 @@ public class CadastroLeiloesTasks extends BaseTasks {
 	}
 
 	public void validarSalvamento(String nome) {
-		
-//		List<WebElement> tabela = leiloesPages.linhasLeiloesCadastrados();
-//		int tamanho = tabela.size();
-//		for (int i = 0; i <= tamanho; i++) {
-//			
-//		};
-//		List<LinhaLeilaoPages> lista = leiloes.buscaLinhaPorValor(nome);
-		leiloes.linhasPorNome(nome);
-		
-//		WebElement celula = lista.get(0).findElements(By.tagName("td")).get(0);
+		int tamanhoLista = leiloes.linhasPorNome(nome).size();
+		Assertions.assertTrue(tamanhoLista>=1, "Leilão não foi salvo");		
 	}		
+
 }
 
