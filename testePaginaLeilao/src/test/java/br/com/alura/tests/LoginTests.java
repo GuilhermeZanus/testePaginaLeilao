@@ -18,7 +18,7 @@ public class LoginTests extends BaseTests {
 	@BeforeEach
 	public void aguardarCarregamento() {
 		this.login = new LoginTasks(jose);
-	//	this.leiloes = new LeiloesTasks(jose);
+		this.leiloes = new LeiloesTasks(jose);
 	}
 	
 	@AfterEach

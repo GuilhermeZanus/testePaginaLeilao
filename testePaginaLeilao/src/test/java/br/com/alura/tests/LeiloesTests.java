@@ -36,5 +36,6 @@ public class LeiloesTests extends BaseTests {
 		login.clicarBotaoLogin();
 		leiloes.clicarNovoLeilao();
 	}
+	//
 }
 

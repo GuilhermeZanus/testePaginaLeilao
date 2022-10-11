@@ -30,6 +30,7 @@ public class CadastroLeiloesTests extends BaseTests {
 		loginTasks.preencheFormularioDeLogin("fulano", "pass");
 		loginTasks.clicarBotaoLogin();
 		leiloesTasks.clicarNovoLeilao();
+		//
 	}
 	
 	@AfterEach
