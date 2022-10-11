@@ -66,12 +66,54 @@ public class LeiloesPages extends BasePages {
 		return lista2;				
 	}
 	
+	public WebElement colunas(String nomeProduto, int indiceLeilaoSalvo, String indiceColuna) {
+		
+		return linhasPorNome(nomeProduto).get(indiceLeilaoSalvo).findElement(By.xpath("//td["+indiceColuna+"]"));
+	}
 	
+	
+	public WebElement dataDeAberturaDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
+		
+		return colunas(nomeProduto, indiceLeilaoSalvo, "1");
+	}
+	
+	
+	public WebElement dataDeAberturaDoLeilao(String nomeProduto) {
+		
+		return dataDeAberturaDoLeilao(nomeProduto, 0);
+	}
 	 
 	
+	public WebElement valorInicialDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
+		
+		return colunas(nomeProduto, indiceLeilaoSalvo, "2");
+	}
+	
+	public WebElement valorInicialDoLeilao(String nomeProduto) {
+		
+		return valorInicialDoLeilao(nomeProduto, 0);
+	}
+	
+	public WebElement usuarioDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
+		
+		return colunas(nomeProduto, indiceLeilaoSalvo, "3");
+	}
 	
 	
-
+	public WebElement usuarioDoLeilao(String nomeProduto) {
+		
+		return colunas(nomeProduto, 0, "3");
+	}
+	
+	public WebElement botaoEditarLeilao(String nomeProduto,  int indiceLeilaoSalvo) {
+		
+		return colunas(nomeProduto, indiceLeilaoSalvo, "4");
+	}
+	
+	public WebElement botaoEditarLeilao(String nomeProduto) {
+		
+		return colunas(nomeProduto, 0, "4");
+	}
 	
 	
 }
