@@ -49,7 +49,7 @@ public class CadastroLeiloesTests extends BaseTests {
 		
 		cadastroLeiloes.salvarLeilao();
 		
-		cadastroLeiloes.validarSalvamento("Leilão do dia " + hoje);
+		cadastroLeiloes.validarSalvamento("Leilão do dia  " + hoje);
 	}
 
 }
