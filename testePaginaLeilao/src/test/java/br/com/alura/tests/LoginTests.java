@@ -17,7 +17,7 @@ public class LoginTests extends BaseTests {
 
 	@BeforeEach
 	public void aguardarCarregamento() {
-		this.login = new LoginTasks(jose);		
+		this.login = new LoginTasks(driver);		
 	}
 	
 	@AfterEach

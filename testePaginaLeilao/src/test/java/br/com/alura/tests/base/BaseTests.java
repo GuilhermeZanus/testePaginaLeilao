@@ -5,14 +5,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTests {
 
-protected WebDriver jose;
+protected WebDriver driver;
 	
 	public BaseTests(){
 //		this.jose = jose;
 		System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
-		jose = new ChromeDriver();
-		jose.get("http://localhost:8080/login");
-		jose.manage().window().maximize();
+		driver = new ChromeDriver();
+		driver.get("http://localhost:8080/login");
+		driver.manage().window().maximize();
     }
 }
 //

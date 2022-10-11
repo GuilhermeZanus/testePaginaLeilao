@@ -21,9 +21,9 @@ public class CadastroLeiloesTests extends BaseTests {
 
 	@BeforeEach
 	public void aguardarCarregamento() throws InterruptedException {
-		loginTasks = new LoginTasks(jose);
-		leiloesTasks = new LeiloesTasks(jose);
-		cadastroLeiloes = new CadastroLeiloesTasks(jose);
+		loginTasks = new LoginTasks(driver);
+		leiloesTasks = new LeiloesTasks(driver);
+		cadastroLeiloes = new CadastroLeiloesTasks(driver);
 		
 //		chegar na página de cadastro d eleilão
 		loginTasks.clicarBotaoEntrar();

@@ -20,8 +20,8 @@ public class LeiloesTests extends BaseTests {
 
 	@BeforeEach
 	public void aguardarCarregamento() {
-		login = new LoginTasks(jose);
-		leiloes = new LeiloesTasks(jose);
+		login = new LoginTasks(driver);
+		leiloes = new LeiloesTasks(driver);
 	}
 	
 	@AfterEach
