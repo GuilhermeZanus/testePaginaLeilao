@@ -65,13 +65,13 @@ public class LeiloesPages extends BasePages {
 		return lista2;				
 	}
 	
-	public WebElement colunas(String nomeProduto, int indiceLeilaoSalvo, String indiceColuna) {
+	public WebElement colunas(String nomeProduto, int indiceLeilaoSalvo, int indiceColuna) {
 		
 		WebElement linha = linhasPorNome(nomeProduto).get(indiceLeilaoSalvo);
 	
 		List<WebElement> colunas = linha.findElements(By.cssSelector("td"));
 		
-		WebElement coluna = colunas.get(2);
+		WebElement coluna = colunas.get(indiceColuna);
 	
 		return coluna;
 	}
@@ -79,7 +79,7 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement dataDeAberturaDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "2");
+		return colunas(nomeProduto, indiceLeilaoSalvo, 1);
 	}
 	
 	
@@ -91,7 +91,7 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement valorInicialDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "3");
+		return colunas(nomeProduto, indiceLeilaoSalvo, 2);
 	}
 	
 	public WebElement valorInicialDoLeilao(String nomeProduto) {
@@ -101,7 +101,7 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement usuarioDoLeilao(String nomeProduto, int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "4");
+		return colunas(nomeProduto, indiceLeilaoSalvo, 3);
 	}
 	
 	
@@ -112,7 +112,7 @@ public class LeiloesPages extends BasePages {
 	
 	public WebElement botaoEditarLeilao(String nomeProduto,  int indiceLeilaoSalvo) {
 		
-		return colunas(nomeProduto, indiceLeilaoSalvo, "5");
+		return colunas(nomeProduto, indiceLeilaoSalvo, 4);
 	}
 	
 	public WebElement botaoEditarLeilao(String nomeProduto) {

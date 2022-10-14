@@ -18,6 +18,7 @@ public class CadastroLeiloesTests extends BaseTests {
 	private LeiloesTasks leiloesTasks;
 	private LoginTasks loginTasks;
 	private CadastroLeiloesTasks cadastroLeiloes;
+	private static int count = 1;
 
 	@BeforeEach
 	public void aguardarCarregamento() throws InterruptedException {
@@ -58,8 +59,9 @@ public class CadastroLeiloesTests extends BaseTests {
 	@DisplayName("Valida valor inicial")
 	public void cadastroValorInicial() throws InterruptedException {	
 		String hoje = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-		String nomeDoLeilao = "Leilão do dia " + hoje + "333300000000";
-		String valorInicial = "2000000.00";
+		String nomeDoLeilao = "Leilão do dia " + hoje +" _4";
+		
+		double valorInicial = 9999.01;
 		
 		cadastroLeiloes.infomarNome(nomeDoLeilao);
 		cadastroLeiloes.informarValorInicial(valorInicial);

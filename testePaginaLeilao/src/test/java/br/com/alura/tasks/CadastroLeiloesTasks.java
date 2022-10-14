@@ -29,6 +29,10 @@ public class CadastroLeiloesTasks extends BaseTasks {
 	public void informarValorInicial(String valor) {
 		cadastroLeiloesPages.valor().sendKeys(valor);		
 	}
+	
+	public void informarValorInicial(double valor) {
+		informarValorInicial(Double.toString(valor));		
+	}
 
 	public void informarDataAbertura(String hoje) {
 		cadastroLeiloesPages.dataAbertura().sendKeys(hoje);		
@@ -49,10 +53,10 @@ public class CadastroLeiloesTasks extends BaseTasks {
 		Assertions.assertTrue(tamanhoLista>=1, "Leilão não foi salvo");		
 	}
 
-	public void validaValorInicial(String nomeProduto, String valorInicial) {
+	public void validaValorInicial(String nomeProduto, double valorEsperado) {
 		
-		String atributo = leiloes.valorInicialDoLeilao(nomeProduto).getText();
-		Assertions.assertEquals(valorInicial, atributo, "Valor Salvo diferente do esperado. Valor salvo: " +atributo);
+		Double valorObtido = Double.parseDouble(leiloes.valorInicialDoLeilao(nomeProduto).getText());
+		Assertions.assertEquals(valorEsperado, valorObtido, "Valor Salvo diferente do esperado. Valor salvo: " +valorObtido);
 	}		
 
 }
